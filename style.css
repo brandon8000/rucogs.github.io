@@ -17,7 +17,8 @@ p
   background-color:rgba(255,0,0,0.7); 
   border-radius: 10px;
   padding:10px;
-
+  position: relative;
+  left: 7px;
 }
 
 .ThreeJS
@@ -68,18 +69,6 @@ p
   height: 42px;
   display: block;
   background-color: transparent;
-}
-
-#cog 
-{
-  z-index: 3; 
-  background: #f00;
-  border-radius: 10px;
-  width: 0px;/*this crap was 40 remember whole spinny thing*/
-  height: 0px;
-  position: fixed;
-  top: 20px;
-  left: 20px;
 }
 
 a:link,a:visited
