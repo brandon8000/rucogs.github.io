@@ -5,7 +5,7 @@
 <title>COGS | Officers: Meet the Staff!</title>
 <link rel="icon" href="images/favicon.png" type="image/png">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="sturl.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -26,17 +26,25 @@
   <span 
     style="color:red;font-size: 12pt" >
     The Rutgers University Creation Of Games Society
-  </span> </br> </br>
+  </span> <br><br>
 
-  This is very unsettling...
-  </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br>
-    <a href = "http://sia.github.io" title = "Author of this site" style="font-size: 6pt"> sia.github.io</a>
-  </br>
+  <a href = "https://github.com/RUCOGS/COGS-Constitution/blob/master/constitution.md" style="font-size: 19pt">C.O.G.S Constitution</a>
+
+  <p style="font-size: 13pt">
+  President: Harry<br>
+  Treasurer: Eric<br>
+  Sergeant-at-Arms: Manny<br>
+  Secratary: Hans<br>
+  Web Master: Shahan<br>
+  ...Under Construction, bare with me not sure of the titles and names yet.<br>
+  ..We can do like pictures and stuff if you guys want.<br>
+  </p>
 </div><!--End of the html, links, non threejs, essentially the website, in a div zindex > than threejs-->
+
 <script src="js/Three.js"></script>
 <script src="js/Detector.js"></script>
 <script src="js/Stats.js"></script>
-<script src="../js/OrbitControls.js"></script>
+<script src="js/OrbitControls2.js"></script>
 <script src="js/THREEx.KeyboardState.js"></script>
 <script src="js/THREEx.FullScreen.js"></script>
 <script src="js/THREEx.WindowResize.js"></script>
@@ -86,7 +94,7 @@ function init()
   light.position.set(0,00,200);
   scene.add(light);
 
-  cube = new  THREE.Mesh( new THREE.CubeGeometry( 2, 2, 2 ), new THREE.MeshNormalMaterial() );
+  cube = new  THREE.Mesh( new THREE.CubeGeometry( 2, 10, 2 ), new THREE.MeshNormalMaterial() );
   scene.add(cube);
 
 }//END INIT
@@ -120,8 +128,9 @@ function render()
   var delta = clock.getDelta();
 
   cube.position.z = Math.cos( time * 10 ) * 4;
+  cube.rotation.x = Math.cos( time * 5 ) * 4;
   /*light.position.x = Math.sin( time * .7 ) * 300;
-  light.position.z = Math.cos( time * .3 ) * 300;*/
+    light.position.z = Math.cos( time * .3 ) * 300;*/
 
   //pac.position.y -= Math.sin( time * 20 );
 

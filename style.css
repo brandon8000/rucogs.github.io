@@ -14,7 +14,7 @@ p
 {
   text-align: left;
   font-size: 19pt;
-  background-color:rgba(255,0,0,0.8); 
+  background-color:rgba(255,0,0,0.7); 
   border-radius: 10px;
   padding:10px;
 
@@ -97,8 +97,4 @@ a:link,a:visited
 a:hover,a:active
 {
   background-color:rgba(255,0,0,0.5);
-}
-p:hover,p:active
-{
-  background-color:rgba(255,0,0,1);
 }
