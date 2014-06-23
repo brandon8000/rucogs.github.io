@@ -5,7 +5,7 @@
 <title>COGS | Officers: Meet the Staff!</title>
 <link rel="icon" href="images/favicon.png" type="image/png">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -30,21 +30,21 @@
 
   <a href = "https://github.com/RUCOGS/COGS-Constitution/blob/master/constitution.md" style="font-size: 19pt">C.O.G.S Constitution</a>
 
-  <p style="font-size: 13pt">
-  President: Harry Stern<br>
-  Treasurer: Eric Bronner<br>
-  Sergeant-at-Arms: Manny Lopez<br>
-  Secratary: Hans Kiessler<br>
-  Web Master: Shahan Akhter<br>
+  <p id="officers" style="font-size: 13pt">
+  President: <font id="Olabels" class="Olabels">Harry Stern</font><br>
+  Treasurer: <font id="Olabels" class="Olabels">Eric Bronner</font><br>
+  Secratary: <font id="Olabels" class="Olabels">Hans Kiessler</font><br>
+  Webmaster: <font id="Olabels" class="Olabels">Shahan Akhter</font><br>
+  Sergeant-At-Arms: <font id="Olabels" class="Olabels">Manny Lopez</font><br>
 
-  Under Construction.<br>
+  <p>Under Constructio...</p>
   </p>
 </div><!--End of the html, links, non threejs, essentially the website, in a div zindex > than threejs-->
 
 <script src="js/Three.js"></script>
 <script src="js/Detector.js"></script>
 <script src="js/Stats.js"></script>
-<script src="js/OrbitControls2.js"></script>
+<script src="js/OrbitControlsOff.js"></script>
 <script src="js/THREEx.KeyboardState.js"></script>
 <script src="js/THREEx.FullScreen.js"></script>
 <script src="js/THREEx.WindowResize.js"></script>
@@ -65,10 +65,10 @@ function init()
 {
   scene = new THREE.Scene();
   var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;	
-  var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
+  var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 100;
   camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
   scene.add(camera);
-  camera.position.set(-10,4,10);
+  camera.position.set(0,0,5);
   camera.lookAt(scene.position);  
 
   //Renderer create and start the renderer; choose antialias setting.
@@ -94,14 +94,15 @@ function init()
   light.position.set(0,00,200);
   scene.add(light);
 
-  cube = new  THREE.Mesh( new THREE.CubeGeometry( 2, 10, 2 ), new THREE.MeshNormalMaterial() );
-  scene.add(cube);
+  plane = new THREE.Mesh(new THREE.PlaneGeometry(42,42,80,80), new THREE.MeshNormalMaterial({transparent: true,opacity: 0.5,wireframe:true}));
+  scene.add(plane);
+
+  scene.fog = new THREE.FogExp2( 0xFFFFFF, 100001 );
 
 }//END INIT
 
 function onWindowResize( event ) {
   renderer.setSize( window.innerWidth, window.innerHeight );
-
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
 }
@@ -111,6 +112,9 @@ function animate()
   requestAnimationFrame( animate );
   render();		
   update();
+
+  plane.rotation.x -= 0.001;
+  plane.rotation.z -= 0.0001;
 
 }//END ANIM
 
@@ -126,13 +130,6 @@ function render()
 {	
   var time = Date.now() * 0.0005;
   var delta = clock.getDelta();
-
-  cube.position.z = Math.cos( time * 10 ) * 4;
-  cube.rotation.x = Math.cos( time * 5 ) * 4;
-  /*light.position.x = Math.sin( time * .7 ) * 300;
-    light.position.z = Math.cos( time * .3 ) * 300;*/
-
-  //pac.position.y -= Math.sin( time * 20 );
 
   renderer.render( scene, camera );
 }
