@@ -114,7 +114,7 @@ font-weight:bold;
   font-weight:bold;
 }
 
-a:link a:visited a:active
+a:link
 {
   color:#D21034;
   text-decoration:none;
