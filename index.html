@@ -14,29 +14,78 @@
 </head>
 
 <body>
-<div  id="cogscontent"  class="cogscontent">
-  </br><center><a href="https://www.facebook.com/groups/ru.cogs/" target="_blank"><img src="images/fblogo.png" alt="COGS Facebook page" width="22" height="22"></a></center>
+<div id="header"> 
+  <div class="wrapper">
+    <a href="index.html" class="title">
+      <div class="left">
+        <span id="siteTitle" title="Creation Of Games Society">C.O.G.S.</span>
+        <span id="siteName" title="Creation Of Games Society">Rutgers University Creation of Games Society</span>
+      </div>
+    </a>
 
-  <span style="color:white;font-size: 19pt" title="Creation Of Games Society">C.O.G.S.</span></br>
+    <div class="right" style="padding-top:75px;">
+      <a href="index.html">Home</a> | 
+      <a href="about.html">About</a> | 
+      <a href="resources.html">Resources</a> | 
+      <a href="https://github.com/rucogs" target="_blank">Github</a>
+    </div>
+  </div>
+</div>
 
-  <span 
-    style="color:red;font-size: 12pt" >
-    The Rutgers University Creation Of Games Society
-  </span>
+<div id="content"> 
+  <div class="wrapper">
+    <div class="pageSection">
+      <h3> Meeting information</h3>
+      <p>
+      When: Wednesdays 6:00pm-8:00pm<br>
+      Who: Anyone, no experience required!<br>
+      Where: Hill Center Room 248 (<a href="https://goo.gl/maps/kxBPG" target="_blank">Directions</a>)
+      </p>
 
-  <p><a style="font-size: 17pt" href="https://rucogs.github.io/officers" title="Meet the staff!">Officers</a></p>
+    </div>
+    <div class="pageSection">
 
-  <p id="whowhat">When: Wednesdays 6:00pm-8:00pm
-  <br>Who: Anyone, no experience required!
-  <br>Where: Hill Center Room 248:
-  <a href="https://goo.gl/maps/kxBPG" target="_blank">Directions</a></p>
+      <h3> Join our Mailing List </h3>
+      <p>
+      To get updates on meetings and other events, <a href="https://email.rutgers.edu/mailman/listinfo/ru_cogs">join our mailing list here!</a>
+      </p>
 
-  <span style="color:red;font-size: 14pt" >MISSION </span>
-  <font style="font-size:8pt">TO MAKE GAMES WE WANT TO PLAY AND TO HELP OTHERS MAKE GAMES TOO</font>
+    </div>
+    <div class="pageSection">
 
-  <p><a id="contlink" href="https://rucogs.github.io/content">CONTENT</a></p>
+      <h3> Global Game Jam 2014 </h3>
+      <p>
+      Some of us participated Global Game Jam 2014 and loved it, our game was called 
+      <a href = "https://globalgamejam.org/2014/games/focal-points"  target="_blank">Focal Points</a>
+      (<a href = "https://dl.dropboxusercontent.com/u/1820269/FocalPoints.zip">Download</a>)</br>
+      </p>
 
-</div><!--End of the html, links, non threejs, essentially the website, in a div zindex > than threejs-->
+      Featured Game: <a href="https://braingale.org/ep/architects/download/files/%5E.zip" title="Links to .zip file containing gamemaker exe for Andrew's game">⇡ by Andrew Marrero</a>
+
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div id="footer"> 
+  <div class="wrapper" style="padding-top:3px;">
+
+    <div class="right" style="text-align:right;">
+      <div> <a href="http://cogs.club/"><span style="padding-bottom:10px;">cogs.club</span></a> - RU COGS &copy 2014</div>
+      <a href="https://www.facebook.com/groups/ru.cogs/" target="_blank"><img src="images/fblogo.png" alt="COGS Facebook page" width="22" height="22"></a>
+      <a href="https://github.com/rucogs" target="_blank"><img src="images/github.png" alt="COGS Github page" width="22" height="22"></a>
+    </div>
+  </div>
+</div>
+
+<script>
+
+$(function(){
+    $("#content").hover(function( e ) {
+      $(".pageSection", this).stop().fadeTo(300, e.type=="mouseenter"?1:0.90); }); 
+    });
+
+</script>
 
 <script src="js/Three.js"></script>
 <script src="js/Detector.js"></script>
@@ -242,8 +291,8 @@ function render()
   cog2.rotation.z -= 0.001;
   cog3.rotation.z -= 0.01;
   cogb.rotation.z -= 0.003;
-  cog4.rotation.z -= 0.02;
-  cog5.rotation.z -= 0.079;
+  cog4.rotation.z -= 0.0002;
+  cog5.rotation.z -= 0.0079;
 
   //camera.rotation.y += Math.sin( time * 7 ) * 0.01;
   //camera.position.x += Math.sin( time * 7 ) * 2.5;

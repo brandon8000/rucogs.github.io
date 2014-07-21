@@ -24,9 +24,9 @@
     </a>
 
     <div class="right" style="padding-top:75px;">
-      <a href="index">Home</a> | 
-      <a href="about">About</a> | 
-      <a href="resources">Resources</a> | 
+      <a href="index.html">Home</a> | 
+      <a href="about.html">About</a> | 
+      <a href="resources.html">Resources</a> | 
       <a href="https://github.com/rucogs" target="_blank">Github</a>
     </div>
   </div>
@@ -34,33 +34,31 @@
 
 <div id="content"> 
   <div class="wrapper">
-    <div class="pageSection">
-      <h3> Meeting information</h3>
-      <p>
-      When: Wednesdays 6:00pm-8:00pm<br>
-      Who: Anyone, no experience required!<br>
-      Where: Hill Center Room 248 (<a href="https://goo.gl/maps/kxBPG" target="_blank">Directions</a>)
-      </p>
-
+    <div class="clear"></div>
+    <div class="pageTitle">
+      About Us
     </div>
     <div class="pageSection">
+      <h3> Club Officers</h3>
+      <p id="officers" style="font-size: 13pt">
+      President: <font id="Olabels" class="Olabels">Harry Stern</font><br>
+      Treasurer: <font id="Olabels" class="Olabels">Eric Bronner</font><br>
+      Secratary: <font id="Olabels" class="Olabels">Rich Gerdes</font><br>
+      Webmaster: <font id="Olabels" class="Olabels">Shahan Akhter</font><br>
+      Sergeant-At-Arms: <font id="Olabels" class="Olabels">Manny Lopez</font><br>
 
-      <h3> Join our Mailing List </h3>
-      <p>
-      To get updates on meetings and other events, <a href="https://email.rutgers.edu/mailman/listinfo/ru_cogs">join our mailing list here!</a>
       </p>
 
-    </div>
-    <div class="pageSection">
-
-      <h3> Global Game Jam 2014 </h3>
+      <h3> Club Constitution</h3>
       <p>
-      Some of us participated Global Game Jam 2014 and loved it, our game was called 
-      <a href = "https://globalgamejam.org/2014/games/focal-points"  target="_blank">Focal Points</a>
-      (<a href = "https://dl.dropboxusercontent.com/u/1820269/FocalPoints.zip">Download</a>)</br>
+      Our constitution can be found <a href = "https://github.com/RUCOGS/COGS-Constitution/blob/master/constitution.md">here</a> on our GitHub
       </p>
 
-      Featured Game: <a href="https://braingale.org/ep/architects/download/files/%5E.zip" title="Links to .zip file containing gamemaker exe for Andrew's game">⇡ by Andrew Marrero</a>
+      <h3>MISSION STATEMENT:</h3>
+      <p>
+      The Rutgers University Creation of Games Society is dedicated to researching, learning, understanding, and teaching
+      the techniques and theories used in video game development in an environment which provides for its members a place expand their knowledge of the concepts
+      and in which they may develop and design video games and theories in the field.</p>
 
     </div>
   </div>
@@ -93,7 +91,7 @@ var container, scene, camera, renderer, controls, stats;
 var keyboard = new THREEx.KeyboardState();
 var clock = new THREE.Clock();
 
-var cog, cog2, cog4, pac, light2, light, loader;
+var cog, cog2, cog3, cog4, cog5, cogb, pac, light2, light, loader;
 var lensflare;
 var specv = '#00FF00';
 var emv = '#1A0000';
@@ -121,6 +119,7 @@ function init()
 
   //renderer.setClearColor( scene.fog.color, 1 );
 
+
   renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 
   // fog must be added to scene before first render
@@ -129,6 +128,8 @@ function init()
   // attach div element to variable to contain the renderer
   container = document.getElementById( 'ThreeJS' );
   container.appendChild( renderer.domElement );
+
+  //
 
   renderer.gammaInput = true;
   renderer.gammaOutput = true;
@@ -158,13 +159,18 @@ shininess: 50 });
 
       cog = new THREE.Mesh(geometry, material);
       cog2 = new THREE.Mesh(geometry,material);
+      cog3 = new THREE.Mesh(geometry,material);
       cog.scale.set(24,24,24);
-      cog2.scale.set(15,15,15);
-      cog.position.set(-200, 0, 0);
-      cog2.position.set(290, 86, 0);
+      cog2.scale.set(164,164,164);
+      cog3.scale.set(15,15,15);
+      cog.position.set(0, 0, 0);
+      cog2.position.set(-1700, 0, -900);
+      cog2.rotation.y = 25 * Math.PI / 180;
+      cog3.position.set(490, 86, 0);
       scene.add(cog);
       scene.add(cog2);
-      });
+      scene.add(cog3);
+  });
 
   loader.load('meshes/bcog.js', function(geometry){
       var material = new THREE.MeshPhongMaterial({
@@ -174,7 +180,11 @@ emissive: emv,
 shading:THREE.FlatShading,
 shininess: 50 });
 
-
+      cogb=new THREE.Mesh(geometry, material);
+      cogb.scale.set(54,54,54);
+      cogb.position.set(700, 0, -100);
+      cogb.overdraw = true;
+      scene.add(cogb);
       });
 
   loader.load( 'meshes/dcog.js', function(geometry){
@@ -185,6 +195,14 @@ emissive: emv,
 shading:THREE.FlatShading,
 shininess: 60 });
 
+      cog4 = new THREE.Mesh(geometry, material);
+      cog5 = new THREE.Mesh(geometry, material);
+      cog4.scale.set(105,105,105);
+      cog5.scale.set(7,7,7);
+      cog4.position.set(100, 200, -540);
+      cog5.position.set(400, -200, -20);
+      scene.add(cog4);
+      scene.add(cog5);
       });
 
   $("body").mousemove(function() {
@@ -195,7 +213,7 @@ shininess: 60 });
       camera.rotation.z = mx*0.00008; 
       });
 
-}
+}//END INIT
 
 function lensFlareUpdateCallback( object ) {
 
@@ -221,6 +239,8 @@ function lensFlareUpdateCallback( object ) {
 
 }
 
+//
+
 function onWindowResize( event ) {
 
   renderer.setSize( window.innerWidth, window.innerHeight );
@@ -237,6 +257,14 @@ function animate()
   render();		
   update();
 
+}//END ANIM
+
+function update()
+{
+  // delta = change in time since last call (in seconds)
+  //var delta = clock.getDelta(); 
+
+  //controls.update();
 }
 
 function render() 
@@ -244,8 +272,28 @@ function render()
   var time = Date.now() * 0.0005;
   var delta = clock.getDelta();
 
+  /*light.position.x = Math.sin( time * .7 ) * 300;
+    light.position.y = Math.cos( time * .5 ) * 400;
+    light.position.z = Math.cos( time * .3 ) * 300;*/
+
   cog.rotation.z += 0.01;
-  cog2.rotation.z -= 0.01;
+  cog2.rotation.z -= 0.001;
+  cog3.rotation.z -= 0.01;
+  cogb.rotation.z -= 0.003;
+  cog4.rotation.z -= 0.0002;
+  cog5.rotation.z -= 0.0079;
+
+  //camera.rotation.y += Math.sin( time * 7 ) * 0.01;
+  //camera.position.x += Math.sin( time * 7 ) * 2.5;
+
+  //lensFlare.position.x = pac.position.x +49;
+  //lensFlare.position.y = pac.position.y +80;
+  //lensFlare.position.z = pac.position.z -250;
+  //lensflare.position.x -= math.sin( time * 20 ) * 1;
+
+
+  //pac.position.y -= Math.sin( time * 20 );
+  //pac.rotation.y -= 0.07;
 
   renderer.render( scene, camera );
 }

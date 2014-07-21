@@ -1,79 +1,132 @@
-html, body 
+body 
 {
+  background-color:#000;
   height: 100%;
   width: 100%;
-  background-color: #000;
-  margin: 0;
+  padding:0;
+  margin:0;
   overflow: hidden;
   font-family: Ubuntu, sans-serif;
-  color:white;
   font-size: 11pt;
 }
 
-#officers, #whowhat
-{
-  text-align: left;
-  font-size: 19pt;
-  background-color:rgba(255,0,0,0.7); 
-  border-radius: 10px;
-  padding:10px;
-  position: relative;
-  left: 7px;
+h3{
+  padding:0;
+  margin:0;
+  font-weight:bold;
 }
 
-#content
-{
-  text-align: center;
-  overflow-y: auto; 
-  overflow-x: hidden;
-  background-color:rgba(0,0,0,0.7); 
-  height:100%;
-  width: 35%;
-  padding-right:10px;
-  z-index: 2; 
-  position: absolute;
-  right: 0px;
+#header{
+	float:left;
+	width:100%;
+	background-color:#ffffff;
+	z-index:3;
+	padding:0;
+	margin:0;
 }
 
-#contlink 
-{
-  font-size:20pt;
+#siteTitle{
+	font-size: 40pt;
+	padding:0;
+	margin:0;
+	display:block;
+}
+
+#siteName{
+	font-size: 16pt;
+	padding:0;
+	margin:0;
+	display:block;
+}
+
+#content{
+	margin:0;
+	padding:0;
+	overflow:auto; 
+	position:absolute;
+	top:100px;
+	left:0px;
+	width:100%;
+	bottom:65px;
+	z-index:1;
+	clear:both;
+}
+
+#footer{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	background-color:#ffffff;
+	color:#000000;
+}
+
+.left{
+	float:left;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.right{
+	float:right;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.wrapper{
+	max-width:980px;
+	width:100%;
+	margin-left:auto;
+	margin-right:auto; 
+	color:#000000;
+}
+
+.title a{
+	color:#000;
+}
+
+.clear{
+	clear:both; height:10px;
+}
+
+.pageTitle{
+	color:#ffffff;
+	font-size:30pt;
+	padding:10px;
+	margin-top:10px;
+}
+
+.pageSection{
+	background:rgba(255,255,255,.85);
+	padding:10px;
+	margin-top:10px;
 }
 
 .ThreeJS
 {
-  z-index: 1;
-  position: absolute;
-}
-
-.cogscontent 
-{
-  text-align: center;
-  overflow-y: auto; 
-  overflow-x: hidden;
-  background-color:rgba(0,0,0,0.7); 
-  height:100%;
-  width: 42%;
-  padding-right:10px;
-  z-index: 2; 
+  z-index: -1;
   position: absolute;
 }
 
 .Olabels
 {
   color: black;
+  font-weight:bold;
 }
 
-#coolstuff
+a:link, a:visited, a:active
 {
-  display: none;
-  text-align: left;
-  padding-left: 50px;
-  border-radius: 10px;
-  border: 3px solid;
-  margin: auto;
-  width: 70%;
+  color:#D21034;
+  text-decoration:none;
 }
+
+a:hover
+{
+  color:#F03D5E;
+  text-decoration:none;
+}
+
+/*-----not sure if will interfere with richard site edits----------*/
 
 ::-webkit-scrollbar 
 {
@@ -106,19 +159,4 @@ html, body
   background-color: transparent;
 }
 
-a:link,a:visited
-{
-  color:#FFFFFF;
-  background-color:rgba(255,255,255,0.45);
-  font-size:10;
-  width:140px;
-  text-align:center;
-  padding:2px;
-  -webkit-border-radius: 5px;
-  text-decoration:none;
-}
-
-a:hover,a:active
-{
-  background-color:rgba(255,0,0,0.5);
-}
+/*-----not sure if will interfere with richard site edits----------*/
