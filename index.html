@@ -179,7 +179,7 @@ shininess: 50 });
       cog2.rotation.y = 25 * Math.PI / 180;
       cog3.position.set(490, 86, 0);
       scene.add(cog);
-      scene.add(cog2);
+      //scene.add(cog2);
       scene.add(cog3);
   });
 
@@ -195,7 +195,7 @@ shininess: 50 });
       cogb.scale.set(54,54,54);
       cogb.position.set(700, 0, -100);
       cogb.overdraw = true;
-      scene.add(cogb);
+      //scene.add(cogb);
       });
 
   loader.load( 'meshes/dcog.js', function(geometry){
@@ -212,8 +212,8 @@ shininess: 60 });
       cog5.scale.set(7,7,7);
       cog4.position.set(100, 200, -540);
       cog5.position.set(400, -200, -20);
-      scene.add(cog4);
-      scene.add(cog5);
+      //scene.add(cog4);
+      //scene.add(cog5);
       });
 
   $("body").mousemove(function() {
@@ -288,11 +288,11 @@ function render()
     light.position.z = Math.cos( time * .3 ) * 300;*/
 
   cog.rotation.z += 0.01;
-  cog2.rotation.z -= 0.001;
+  //cog2.rotation.z -= 0.001;
   cog3.rotation.z -= 0.01;
-  cogb.rotation.z -= 0.003;
-  cog4.rotation.z -= 0.0002;
-  cog5.rotation.z -= 0.0079;
+  //cogb.rotation.z -= 0.003;
+  //cog4.rotation.z -= 0.0002;
+  //cog5.rotation.z -= 0.0079;
 
   //camera.rotation.y += Math.sin( time * 7 ) * 0.01;
   //camera.position.x += Math.sin( time * 7 ) * 2.5;
