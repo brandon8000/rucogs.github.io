@@ -34,30 +34,32 @@
 
 <div id="content"> 
   <div class="wrapper">
+    <div class="clear"></div>
     <div class="pageTitle">
-      Resources
+      About Us
     </div>
     <div class="pageSection">
-      <h3>Helpful IRC Chatrooms:</h3>
-      <span>
-        #ludumdare on irc.afternet.org</br>
-        #bbg on irc.freenode.net</br>
-        #whitedit-gamedev on irc.freenode.net</br>
-      </span>
+      <h3> Club Officers</h3>
+      <p id="officers" style="font-size: 13pt">
+      President: <font id="Olabels" class="Olabels">Harry Stern</font><br>
+      Treasurer: <font id="Olabels" class="Olabels">Eric Bronner</font><br>
+      Secretary: <font id="Olabels" class="Olabels">Rich Gerdes</font><br>
+      Webmaster: <font id="Olabels" class="Olabels">Shahan Akhter</font><br>
+      Sergeant-At-Arms: <font id="Olabels" class="Olabels">Manny Lopez</font><br>
 
-    </div>
-    <div class="pageSection">
+      </p>
 
-      <h3>Useful Links</h3>
-      Awesome Sound Generator! <a href = "http://jfxr.frozenfractal.com/" target="_blank">jfxr.net</a></br>
-      </br>
-      Tile Generator <a href = "http://autotilegen.com/" target="_blank">autotilegen.com</a></br>
-      </br>
-      Original Video Game Music: <a href = "https://rucogs.github.io/andrewmusic" target="_blank">Here</a></br>
-      </br>
-      Great for getting started with Unity: <a href = "http://www.unity3dstudent.com/category/modules/essential-skills/" target="_blank">Unity3DStudent</a></br>
-      </br>
-      Tons of great tutorials for many languages: <a href = "http://www.3dbuzz.com/training" target="_blank">3D Buzz</a></br>
+      <h3> Club Constitution</h3>
+      <p>
+      Our constitution can be found <a href = "https://github.com/RUCOGS/COGS-Constitution/blob/master/constitution.md">here</a> on our GitHub
+      </p>
+
+      <h3>MISSION STATEMENT:</h3>
+      <p>
+      The Rutgers University Creation of Games Society is dedicated to researching, learning, understanding, and teaching
+      the techniques and theories used in video game development in an environment which provides for its members a place expand their knowledge of the concepts
+      and in which they may develop and design video games and theories in the field.</p>
+
     </div>
   </div>
   <div class="clear"></div>
