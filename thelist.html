@@ -3,7 +3,7 @@
 
 <head>
 <title>COGS | Rutgers Game Development Community</title>
-<meta property="og:image" content="images/COGS-Controller-Logo.png"/>
+<meta property="og:image" content="images/cogsfbimage.png"/>
 <meta property="og:description" content="Rutgers Official Game Development Club | Mission: To make games we want to play and to help others make games too"/>
 <link rel="icon" href="images/favicon.png" type="image/png">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -27,7 +27,6 @@
       <a href="index.html">Home</a> | 
       <a href="about.html">About</a> | 
       <a href="resources.html">Resources</a> | 
-      <a href="thelist.html">List of Games Ideas</a> | 
       <a href="https://github.com/rucogs" target="_blank">Github</a>
     </div>
   </div>
@@ -35,43 +34,19 @@
 
 <div id="content"> 
   <div class="wrapper">
-    <div class="pageSection">
-      <h3> Meeting information</h3>
-      <p>
-      <b>When:</b> Wednesdays 7:00pm<br>
-      <b>Who:</b> Anyone, no experience required!<br>
-      <b>Where:</b> Busch Campus, Hill Center Room 248 (<a href="https://goo.gl/maps/kxBPG" target="_blank">Directions</a>)
-      </p>
-
+    <div class="pageTitle">
+      List of Game Ideas
     </div>
     <div class="pageSection">
+      <p>Game ideas coming soon!</p>
+    </div>
 
-      <h3> Join our Mailing List </h3>
-      <p>
-      To get updates on meetings and other events, <a href="https://email.rutgers.edu/mailman/listinfo/ru_cogs">join our mailing list here!</a>
-      </p>
+    <div class="pageSection"> 
+      <p>(some of mine: Planet Fighter, Lighting based platformer, Infinite terrain high speed fps)</p>
+      Possible Google Docs link we can all edit.</br>
 
     </div>
-    <div class="pageSection">
 
-      <h3> Global Game Jam 2014 </h3>
-      <p>
-      Some of us participated Global Game Jam 2014 and loved it. Our game was called 
-      <a href = "http://globalgamejam.org/2014/games/focal-points"  target="_blank">Focal Points</a>
-      (<a href = "https://dl.dropboxusercontent.com/u/1820269/FocalPoints.zip">Download</a>)</br>
-      </p>
-
-      Featured Game: <a href="http://braingale.org/ep/architects/download/files/%5E.zip" title="Links to .zip file containing gamemaker exe for Andrew's game">⇡ by Andrew Marrero</a>
-
-    </div>
-    <div class="pageSection">
-
-      <h3>Facebook</h3>
-      <p>
-      Join our <a href="https://www.facebook.com/groups/ru.cogs">Facebook Group</a> for the most up to date information.
-      </p>
-
-    </div>
   </div>
   <div class="clear"></div>
 </div>
@@ -86,15 +61,6 @@
     </div>
   </div>
 </div>
-
-<script>
-
-$(function(){
-    $("#content").hover(function( e ) {
-      $(".pageSection", this).stop().fadeTo(300, e.type=="mouseenter"?1:0.90); }); 
-    });
-
-</script>
 
 <script src="js/Three.js"></script>
 <script src="js/Detector.js"></script>
@@ -128,7 +94,8 @@ function init()
   camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
   scene.add(camera);
   //cam defaults to (0,0,0) so pull it back (z = 400) and up (y = 100) and set the angle towards the scene origin
-  camera.position.set(225,0,900);
+  camera.position.set(0,0,900);
+  camera.lookAt(scene.position);	
 
   //Renderer create and start the renderer; choose antialias setting.
   if ( Detector.webgl )
@@ -187,7 +154,7 @@ shininess: 50 });
       cog2.rotation.y = 25 * Math.PI / 180;
       cog3.position.set(490, 86, 0);
       scene.add(cog);
-      //scene.add(cog2);
+      scene.add(cog2);
       scene.add(cog3);
   });
 
@@ -203,7 +170,7 @@ shininess: 50 });
       cogb.scale.set(54,54,54);
       cogb.position.set(700, 0, -100);
       cogb.overdraw = true;
-      //scene.add(cogb);
+      scene.add(cogb);
       });
 
   loader.load( 'meshes/dcog.js', function(geometry){
@@ -220,8 +187,8 @@ shininess: 60 });
       cog5.scale.set(7,7,7);
       cog4.position.set(100, 200, -540);
       cog5.position.set(400, -200, -20);
-      //scene.add(cog4);
-      //scene.add(cog5);
+      scene.add(cog4);
+      scene.add(cog5);
       });
 
   $("body").mousemove(function() {
@@ -296,11 +263,11 @@ function render()
     light.position.z = Math.cos( time * .3 ) * 300;*/
 
   cog.rotation.z += 0.01;
-  //cog2.rotation.z -= 0.001;
+  cog2.rotation.z -= 0.001;
   cog3.rotation.z -= 0.01;
-  //cogb.rotation.z -= 0.003;
-  //cog4.rotation.z -= 0.0002;
-  //cog5.rotation.z -= 0.0079;
+  cogb.rotation.z -= 0.003;
+  cog4.rotation.z -= 0.0002;
+  cog5.rotation.z -= 0.0079;
 
   //camera.rotation.y += Math.sin( time * 7 ) * 0.01;
   //camera.position.x += Math.sin( time * 7 ) * 2.5;
