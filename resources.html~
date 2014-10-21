@@ -27,6 +27,7 @@
       <a href="index.html">Home</a> | 
       <a href="about.html">About</a> | 
       <a href="resources.html">Resources</a> | 
+      <a href="thelist.html">List of Games Ideas</a> | 
       <a href="https://github.com/rucogs" target="_blank">Github</a>
     </div>
   </div>
@@ -37,6 +38,14 @@
     <div class="pageTitle">
       Resources
     </div>
+
+    <div class="pageSection">
+      <h3>Greg Lane</h3>
+      We had a speaker come to our club and give a presentation about his experience in the game development industry.
+      It was really great and we all learned a lot, here are links to his slideshow and other documents he went over!</br>
+      -<a href = "https://rucogs.github.io/GregLane/GameDesigner_Intro.docx">GameDesigner Intro</a>
+    </div>
+
     <div class="pageSection">
       <h3>Helpful IRC Chatrooms:</h3>
       <span>
