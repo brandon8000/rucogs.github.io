@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<div id="header"> 
+<div id="header">
   <div class="wrapper">
     <a href="index.html" class="title">
       <div class="left">
@@ -24,16 +24,16 @@
     </a>
 
     <div class="right" style="padding-top:75px;">
-      <a href="index.html">Home</a> | 
-      <a href="about.html">About</a> | 
-      <a href="resources.html">Resources</a> | 
-      <a href="thelist.html">List of Games Ideas</a> | 
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="resources.html">Resources</a> |
+      <a href="thelist.html">List of Games Ideas</a> |
       <a href="https://github.com/rucogs" target="_blank">Github</a>
     </div>
   </div>
 </div>
 
-<div id="content"> 
+<div id="content">
   <div class="wrapper">
     <div class="clear"></div>
     <div class="pageTitle">
@@ -42,11 +42,13 @@
     <div class="pageSection">
       <h3> Club Officers</h3>
       <p id="officers" style="font-size: 13pt">
-      President: <font id="Olabels" class="Olabels">Harry Stern</font><br>
-      Treasurer: <font id="Olabels" class="Olabels">Eric Bronner</font><br>
-      Secretary: <font id="Olabels" class="Olabels">Rich Gerdes</font><br>
-      Webmaster: <font id="Olabels" class="Olabels">Shahan Akhter</font><br>
-      Sergeant-At-Arms: <font id="Olabels" class="Olabels">Manny Lopez</font><br>
+      CoPresident: <font id="Olabels" class="Olabels">Doug Rudolph</font><br>
+      CoPresident: <font id="Olabels" class="Olabels">Andrew Marshall</font><br>
+      Sergeant-At-Arms: <font id="Olabels" class="Olabels">Sir Qasim Abbas</font><br>
+      Treasurer: <font id="Olabels" class="Olabels">William He</font><br>
+      Secretary: <font id="Olabels" class="Olabels">Nikhil Meshram</font><br>
+      Scribe: <font id="Olabels" class="Olabels">Nikhil Meshram</font><br>
+      Webmaster: <font id="Olabels" class="Olabels">Alex Jia</font><br>
 
       </p>
 
@@ -66,7 +68,7 @@
   <div class="clear"></div>
 </div>
 
-<div id="footer"> 
+<div id="footer">
   <div class="wrapper" style="padding-top:3px;">
 
     <div class="right" style="text-align:right;">
@@ -99,24 +101,24 @@ var emv = '#1A0000';
 
 init();
 animate();
-function init() 
+function init()
 {
   scene = new THREE.Scene();
 
-  var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;	
-  //var SCREEN_WIDTH = 500, SCREEN_HEIGHT = 500;	
+  var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+  //var SCREEN_WIDTH = 500, SCREEN_HEIGHT = 500;
   var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
   camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
   scene.add(camera);
   //cam defaults to (0,0,0) so pull it back (z = 400) and up (y = 100) and set the angle towards the scene origin
   camera.position.set(0,0,900);
-  camera.lookAt(scene.position);	
+  camera.lookAt(scene.position);
 
   //Renderer create and start the renderer; choose antialias setting.
   if ( Detector.webgl )
     renderer = new THREE.WebGLRenderer( {antialias:true, alpha: true } );
   else
-    renderer = new THREE.CanvasRenderer(); 
+    renderer = new THREE.CanvasRenderer();
 
   //renderer.setClearColor( scene.fog.color, 1 );
 
@@ -209,9 +211,9 @@ shininess: 60 });
   $("body").mousemove(function() {
       var mx = event.clientX;
       var my = event.clientY;
-      camera.rotation.y = my*0.00008; 
-      camera.rotation.x = mx*0.00008; 
-      camera.rotation.z = mx*0.00008; 
+      camera.rotation.y = my*0.00008;
+      camera.rotation.x = mx*0.00008;
+      camera.rotation.z = mx*0.00008;
       });
 
 }//END INIT
@@ -252,10 +254,10 @@ function onWindowResize( event ) {
 }
 
 
-function animate() 
+function animate()
 {
   requestAnimationFrame( animate );
-  render();		
+  render();
   update();
 
 }//END ANIM
@@ -263,13 +265,13 @@ function animate()
 function update()
 {
   // delta = change in time since last call (in seconds)
-  //var delta = clock.getDelta(); 
+  //var delta = clock.getDelta();
 
   //controls.update();
 }
 
-function render() 
-{	
+function render()
+{
   var time = Date.now() * 0.0005;
   var delta = clock.getDelta();
 
