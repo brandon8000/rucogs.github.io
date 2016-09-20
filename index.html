@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<div id="header"> 
+<div id="header">
   <div class="wrapper">
     <a href="index.html" class="title">
       <div class="left">
@@ -24,23 +24,23 @@
     </a>
 
     <div class="right" style="padding-top:75px;">
-      <a href="index.html">Home</a> | 
-      <a href="about.html">About</a> | 
-      <a href="resources.html">Resources</a> | 
-      <a href="thelist.html">List of Games Ideas</a> | 
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="resources.html">Resources</a> |
+      <a href="thelist.html">List of Games Ideas</a> |
       <a href="https://github.com/rucogs" target="_blank">Github</a>
     </div>
   </div>
 </div>
 
-<div id="content"> 
+<div id="content">
   <div class="wrapper">
     <div class="pageSection">
       <h3> Meeting information</h3>
       <p>
-      <b>When:</b> Thursdays 8:30pm<br>
+      <b>When:</b> Tuesday 7:00pm-9:00<br>
       <b>Who:</b> Anyone, no experience required!<br>
-      <b>Where:</b> Busch Campus, Hill Center Room 248 (<a href="https://goo.gl/maps/kxBPG" target="_blank">Directions</a>)
+      <b>Where:</b> Busch Campus, Hill Center Room 250 (<a href="https://goo.gl/maps/kxBPG" target="_blank">Directions</a>)
       </p>
 
     </div>
@@ -48,7 +48,7 @@
 
       <h3> Join our Mailing List </h3>
       <p>
-      To get updates on meetings and other events, <a href="https://email.rutgers.edu/mailman/listinfo/ru_cogs">join our mailing list here!</a>
+      To get updates on meetings and other events, <a href="http://eepurl.com/cgDAk5">join our mailing list here!</a>
       </p>
 
     </div>
@@ -56,11 +56,11 @@
 
       <h3> Global Game Jam </h3>
       <p>
-      Some of us participated Global Game Jam and loved it. 
+      Some of us participated Global Game Jam and loved it.
       <ul>
-      <li>In 2014 we made a game called 
+      <li>In 2014 we made a game called
       <a href = "http://globalgamejam.org/2014/games/focal-points"  target="_blank">Focal Points</a>.</li>
-      <li>In 2015 we made a game called 
+      <li>In 2015 we made a game called
       <a href = "http://globalgamejam.org/2015/games/nithon"  target="_blank">Nithon</a>.</li>
       <li>In 2016 we made two games: <a href = "http://globalgamejam.org/2016/games/ritual-rex"  target="_blank">Ritual Rex</a> and <a href="http://globalgamejam.org/2016/games/kill-baby"  target="_blank">KTB</a>.</li>
       </ul>
@@ -81,7 +81,7 @@
   <div class="clear"></div>
 </div>
 
-<div id="footer"> 
+<div id="footer">
   <div class="wrapper" style="padding-top:3px;">
 
     <div class="right" style="text-align:right;">
@@ -96,7 +96,7 @@
 
 $(function(){
     $("#content").hover(function( e ) {
-      $(".pageSection", this).stop().fadeTo(300, e.type=="mouseenter"?1:0.90); }); 
+      $(".pageSection", this).stop().fadeTo(300, e.type=="mouseenter"?1:0.90); });
     });
 
 </script>
@@ -123,12 +123,12 @@ var emv = '#1A0000';
 
 init();
 animate();
-function init() 
+function init()
 {
   scene = new THREE.Scene();
 
-  var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;	
-  //var SCREEN_WIDTH = 500, SCREEN_HEIGHT = 500;	
+  var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+  //var SCREEN_WIDTH = 500, SCREEN_HEIGHT = 500;
   var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
   camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
   scene.add(camera);
@@ -139,7 +139,7 @@ function init()
   if ( Detector.webgl )
     renderer = new THREE.WebGLRenderer( {antialias:true, alpha: true } );
   else
-    renderer = new THREE.CanvasRenderer(); 
+    renderer = new THREE.CanvasRenderer();
 
   //renderer.setClearColor( scene.fog.color, 1 );
 
@@ -232,9 +232,9 @@ shininess: 60 });
   $("body").mousemove(function() {
       var mx = event.clientX;
       var my = event.clientY;
-      camera.rotation.y = my*0.00008; 
-      camera.rotation.x = mx*0.00008; 
-      camera.rotation.z = mx*0.00008; 
+      camera.rotation.y = my*0.00008;
+      camera.rotation.x = mx*0.00008;
+      camera.rotation.z = mx*0.00008;
       });
 
 }//END INIT
@@ -275,10 +275,10 @@ function onWindowResize( event ) {
 }
 
 
-function animate() 
+function animate()
 {
   requestAnimationFrame( animate );
-  render();		
+  render();
   update();
 
 }//END ANIM
@@ -286,13 +286,13 @@ function animate()
 function update()
 {
   // delta = change in time since last call (in seconds)
-  //var delta = clock.getDelta(); 
+  //var delta = clock.getDelta();
 
   //controls.update();
 }
 
-function render() 
-{	
+function render()
+{
   var time = Date.now() * 0.0005;
   var delta = clock.getDelta();
 
