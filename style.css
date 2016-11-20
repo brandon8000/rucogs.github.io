@@ -1,0 +1,49 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #ffffff; /*was #777*/
+    line-height: 1.8;
+}
+
+/*Overriding the default values to accomodate our design*/
+.w3-center{
+	color: white;
+	margin-top: 0px;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    opacity: 0.7;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('images/mario.png');
+    min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url("images/zelda.jpg");
+    min-height: 100%;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url("images/metroid.gif");
+    min-height: 100%;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for small tablets and mobiles */
+@media only screen and (max-width: 768px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
